@@ -1,0 +1,28 @@
+{
+  "name": "elastic-search-client",
+  "version": "1.0.0",
+  "description": "Cliente typescript para acesso rápido às funcionalidades principais do ElasticSearch",
+  "main": "main.ts",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "elasticsearch": "docker run -d --name elasticsearch-srv -p 9200:9200 -p 9300:9300 -e discovery.type=single-node docker.elastic.co/elasticsearch/elasticsearch:7.2.0",
+    "stop:all": "docker stop $(docker ps -q -a) && docker rm $(docker ps -q -a)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaturesProphet/ElasticSearchClient.git"
+  },
+  "author": "Mateus Garcia",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/NaturesProphet/ElasticSearchClient/issues"
+  },
+  "homepage": "https://github.com/NaturesProphet/ElasticSearchClient#readme",
+  "dependencies": {
+    "@types/request-promise": "^4.1.44",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
+}
